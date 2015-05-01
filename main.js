@@ -1,33 +1,44 @@
-var app = require('app');  // Module to control application life.
-var BrowserWindow = require('browser-window');  // Module to create native browser window.
+var app = require('app'),
+    BrowserWindow = require('browser-window'),
+    globalShortcut = require('global-shortcut');
 
-// Report crashes to our server.
 require('crash-reporter').start();
 
-// Keep a global reference of the window object, if you don't, the window will
-// be closed automatically when the javascript object is GCed.
 var mainWindow = null;
 
-// Quit when all windows are closed.
-app.on('window-all-closed', function() {
+app.on('mainWindow-all-closed', function() {
   if (process.platform != 'darwin')
     app.quit();
 });
 
-// This method will be called when Electron has done everything
-// initialization and ready for creating browser windows.
 app.on('ready', function() {
-  // Create the browser window.
-  mainWindow = new BrowserWindow({width: 800, height: 600});
+  mainWindow = new BrowserWindow({
+    // icon                : 'global/images/logo.png',
+    "min-width"         : 800,
+    "min-height"        : 600,
+    fullscreen          : true,
+    resizable           : true,
+    "use-content-size"  : true
+  });
 
-  // and load the index.html of the app.
-  mainWindow.loadUrl('https://play.google.com/music/');
+  // mainWindow.loadUrl('https://play.google.com/music/');
+  mainWindow.loadUrl('file://' + __dirname + '/index.html');
 
-  // Emitted when the window is closed.
+  mainWindow.openDevTools();
+
   mainWindow.on('closed', function() {
-    // Dereference the window object, usually you would store windows
-    // in an array if your app supports multi windows, this is the time
-    // when you should delete the corresponding element.
     mainWindow = null;
+  });
+
+  var register_play = globalShortcut.register('ctrl+space', function(){
+    mainWindow.webContents.send('ping', 'play-pause');
+  });
+
+  var register_rewind = globalShortcut.register('ctrl+left', function(){
+    mainWindow.webContents.send('ping', 'rewind');
+  });
+
+  var register_next = globalShortcut.register('ctrl+right', function(){
+    mainWindow.webContents.send('ping', 'forward');
   });
 });
