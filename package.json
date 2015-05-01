@@ -4,6 +4,9 @@
   "description": "A cross platform desktop client for google play music - built with electron",
   "main": "main.js",
   "author": "Ryan French",
+  "scripts": {
+    "start": "electron ."
+  },
   "license": "MIT",
   "dependencies": {
     "electron-prebuilt": "^0.25.1-1"
