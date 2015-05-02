@@ -1,0 +1,9 @@
+body {
+  overflow: hidden;
+}
+
+webview {
+  height: 100%;
+  position :absolute;
+  width: 100%; 
+}
