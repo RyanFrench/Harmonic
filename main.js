@@ -21,10 +21,7 @@ app.on('ready', function() {
     "use-content-size"  : true
   });
 
-  // mainWindow.loadUrl('https://play.google.com/music/');
   mainWindow.loadUrl('file://' + __dirname + '/index.html');
-
-  mainWindow.openDevTools();
 
   mainWindow.on('closed', function() {
     mainWindow = null;
