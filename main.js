@@ -13,12 +13,13 @@ app.on('mainWindow-all-closed', function() {
 
 app.on('ready', function() {
   mainWindow = new BrowserWindow({
-    // icon                : 'global/images/logo.png',
+    icon                : 'images/gpm_icon.png',
     "min-width"         : 800,
     "min-height"        : 600,
     fullscreen          : true,
     resizable           : true,
-    "use-content-size"  : true
+    "use-content-size"  : true,
+    title               : 'Harmonic'
   });
 
   mainWindow.loadUrl('file://' + __dirname + '/index.html');
