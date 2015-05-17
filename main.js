@@ -4,7 +4,7 @@ var app = require('app'),
     globalShortcut = require('global-shortcut'),
     fs = require('fs'),
     path = require('path'),
-    configPath = path.join(userDataPath,'config.json'),
+    configPath = path.join(userDataPath, 'config.json'),
     config;
 
 require('crash-reporter').start();
@@ -49,7 +49,8 @@ var loadConfig = function(){
 };
 
 var createConfig = function(){
-
+  var template = require('./templates/config.json');
+  fs.writeFile(configPath, template);
 };
 
 var registerShortcuts = function(){
