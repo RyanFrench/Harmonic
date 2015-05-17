@@ -1,0 +1,7 @@
+{
+  "keybindings": {
+    "play_pause": "CmdOrCtrl+Space",
+    "rewind": "CmdOrCtrl+Left",
+    "forward": "CmdOrCtrl+Right"
+  }
+}
