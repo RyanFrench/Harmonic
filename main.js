@@ -19,7 +19,7 @@ app.on('ready', function() {
     fullscreen          : true,
     resizable           : true,
     "use-content-size"  : true,
-    title               : 'Harmonic'
+    title               : app.getName()
   });
 
   mainWindow.loadUrl('file://' + __dirname + '/index.html');

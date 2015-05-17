@@ -1,5 +1,5 @@
 {
-  "name": "harmonic",
+  "name": "Harmonic",
   "version": "0.1.0",
   "description": "A cross platform desktop client for google play music - built with electron",
   "main": "main.js",
@@ -8,9 +8,6 @@
     "start": "electron ."
   },
   "license": "MIT",
-  "dependencies": {
-    "electron-prebuilt": "^0.25.1-1"
-  },
   "devDependencies": {
     "electron-prebuilt": "^0.25.1-1"
   }
