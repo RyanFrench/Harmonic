@@ -18,7 +18,7 @@ app.on('mainWindow-all-closed', function() {
 
 app.on('ready', function() {
   mainWindow = new BrowserWindow({
-    icon                : 'images/gpm_icon.png',
+    icon                : 'icons/gpm_icon.png',
     "min-width"         : 800,
     "min-height"        : 600,
     fullscreen          : true,
@@ -29,7 +29,7 @@ app.on('ready', function() {
 
   loadConfig();
 
-  mainWindow.loadUrl('file://' + __dirname + '/index.html');
+  mainWindow.loadUrl('file://' + __dirname + '/views/player.html');
 
   mainWindow.on('closed', function() {
     mainWindow = null;
@@ -50,7 +50,7 @@ var loadConfig = function(){
 
 var createConfig = function(){
   var template = require('./templates/config.json');
-  fs.writeFile(configPath, template);
+  fs.writeFile(configPath, JSON.stringify(template));
 };
 
 var registerShortcuts = function(){
