@@ -1,7 +1,7 @@
 {
   "keybindings": {
-    "play_pause": "CmdOrCtrl+Space",
-    "rewind": "CmdOrCtrl+Left",
-    "forward": "CmdOrCtrl+Right"
+    "PLAY_PAUSE": "MediaPlayPause",
+    "REWIND": "MediaPreviousTrack",
+    "FORWARD": "MediaNextTrack"
   }
 }

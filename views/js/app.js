@@ -1,6 +1,6 @@
-var ipc = require('ipc');
+const ipcRendered = require('electron').ipcRenderer;
 
-ipc.on('ping', function(arg){
+ipcRendered.on('ping', function(event, message) {
   var webView = document.querySelector('webview#gpm-player');
-  webView.executeJavaScript("document.querySelector('sj-icon-button[data-id=\"" + arg + "\"]').click()");
+  webView.executeJavaScript('document.querySelector(\'paper-icon-button[data-id="' + message + '"]\').click()');
 });
