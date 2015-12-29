@@ -32,8 +32,6 @@ app.on('ready', function() {
   if (process.env.NODE_ENV === 'debug')
     mainWindow.toggleDevTools();
 
-  console.log('Toggle Dev Tools');
-
   loadConfig();
 
   mainWindow.loadURL('file://' + __dirname + '/views/player.html');
